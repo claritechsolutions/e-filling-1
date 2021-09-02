@@ -1,0 +1,114 @@
+
+<div class="container col-12 col-sm-12">
+<table width="898" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#E9E9EC">
+    <tbody>
+        <tr>
+            <td width="570" valign="top">
+                <table width="570"  border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <td width="570" height="55">
+                                &nbsp;
+                                <img src="../../../assets/images/Arrow_bullet_big.jpg" width="18" height="19">
+                                &nbsp;&nbsp;
+                                <span class="Heading1">File 
+                                    your Court Document Online !</span>
+                            </td>
+                            <td width="1" class="back-img2"></td>
+
+                            <br>
+                        </tr>
+                        <tr>  <td height="1" class="back-img"></td></tr>
+                        <tr><td class="InnerText">
+                            <br><img src="../../../assets/images/Home_Page_Image.jpg" width="120" height="86"  class="homeimg" align="left">
+                            <p class="text" >
+                            E-Filing.com, headquartered in Santa Barbara, California began its operation in September of 1999.
+                             E-Filing.com offers state-of-the art electronic filing process based on the patent no.
+                              7,035,830 that was granted to Image X in 2006. Filing cases electronically reduces 
+                              the cost of filing, eliminating much of the paper handling involved, and allows the 
+                              courts to function more efficiently. In addition, E-Filing.com's electronic filing process 
+                              makes it possible for documents to be submitted to the courts twenty-four hours a day from 
+                              any location with Internet access. 
+                            </p>
+                            
+                                            
+                        </td>
+                        <td width="1" class="back-img2"></td>
+                    </tr>
+                        <tr>  <td height="1" class="back-img"></td></tr>
+                        <tr>
+                            <td width="570" height="55">
+                                &nbsp;
+                                <img src="../../../assets/images/Arrow_bullet_big.jpg" width="18" height="19">
+                                &nbsp;&nbsp;
+                                <span class="Heading1">To use this site create a login ID and Password
+             !</span>
+                            </td>
+                            <td width="1" class="back-img2"></td>
+                            </tr>
+                            <tr>
+                                <td class="InnerText">&nbsp;&nbsp;1) Click Sign Up<br>
+                                   &nbsp;&nbsp; 2) Complete the Form<br>
+                                   &nbsp;&nbsp; 3) Write down your login ID and Password<br>
+                                </td>
+                                <td width="1" class="back-img2"></td>
+                            </tr>
+                        <br>
+                    </tbody>
+                </table>
+            </td>
+            <td width="314" height="210"><div class="div1"><div class="button-container">
+                <button class="btn btn-sm cust-but" (click)="login()">Login</button>
+                <button class="btn btn-sm cust-but" (click)="signup()">Sign Up</button>
+            </div>
+          <div class="formcontainer" *ngIf="!verify">
+             <form #frm="ngForm" >
+                    <div class="form-group custom-group  ">
+                        <label class="mt-4">Email:</label>
+                        <input type="text" class="form-control mt-4"  name="email" #email="ngModel" [(ngModel)]="userobj.email" ngModel>
+                    </div>
+                    <div class="form-group custom-group mt-2">
+                        <label>Password:</label>
+                        <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="userobj.password" ngModel>
+                    </div>
+                    <div class="form-group custom-group mt-2">
+                        <label >State/Circuit:</label>
+                        <select>
+                            <option *ngFor="let st of state">{{st}}</option>
+                        </select>
+                    </div>
+                    <br>
+                    <button type="button" class="custbutton">Login</button>
+                    <br>
+                    <a href="#" style="color:white;margin-left: 120px;">Forgot Password?</a>
+                   
+                </form>
+            </div>
+            <div class="formcontainer2" *ngIf="verify">
+                <form #frm="ngForm" >
+                    <h4><p class="pt-2 signup">Getting Started is easy!</p></h4>
+                       <div class="form-group custom-group  ">
+                           <label >First Name:</label>
+                           <input type="text" class="form-control "  name="fn" #fn="ngModel" [(ngModel)]="userobjs.fn" ngModel>
+                       </div>
+                       <div class="form-group custom-group mt-1">
+                           <label>Last Name:</label>
+                           <input type="text" class="form-control" name="ln" #ln="ngModel" [(ngModel)]="userobjs.ln" ngModel>
+                       </div>
+                       <div class="form-group custom-group mt-1">
+                        <label>Email:</label>
+                        <input type="email" class="form-control" name="em" #em="ngModel" [(ngModel)]="userobjs.em" ngModel>
+                    </div>
+                       
+                       <button type="button"  (click)="register()" class="custbutton">Sign Up</button>
+                      
+                   </form>
+               </div>
+            
+            
+               
+    
+        </div></td>
+        </tr>
+    </tbody>
+</table>

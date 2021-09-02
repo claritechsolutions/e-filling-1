@@ -1,0 +1,154 @@
+
+<div class='container'>
+    <table width="898" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#E9E9EC">
+         <tbody>
+             <tr>
+                 <td>
+                    <table width="370" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#E9E9EC">
+                        <tbody>
+                            <tr>
+                                <td>
+                            <form #frm="ngForm" name="form" (ngSubmit)="frm.form.valid&&continue(frm)">
+                                <div class="form-group custom-group mt-2">
+                                    <label>Email:</label>
+                                    <input type="email" class="form-control" name="email" #email="ngModel" 
+                                    ngModel [(ngModel)]="userobj.email" required [ngClass]="{'is-invalid':frm.submitted && email.invalid}"
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> 
+                                    
+                                    <span *ngIf="frm.submitted" class="invalid-feedback ">
+                                        <span *ngIf="email.errors?.pattern"><p>Enter valid email</p></span>
+                                    </span>
+                                </div>
+                                
+                                
+                                <div class="form-group custom-group mt-1">
+                                   <label>Password:</label>
+                                  
+                                   <input [type]="pass1" class="form-control " name="pass" #pass="ngModel"
+                                   [ngClass]="{'is-invalid':frm.submitted && pass.invalid}" ngModel
+                                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                   <i class="fa fa-eye" style="margin-left: -20px;margin-top: 5px;" (click)="passtoggler1()"></i>
+                                   <span *ngIf="frm.submitted" class="invalid-feedback ">
+                                    <span *ngIf="pass.errors?.pattern"><p>Atleast 8 characters and atleast 1 uppercase,lowercase and number</p></span>
+                                </span>
+                               </div>
+                               <div class="form-group custom-group mt-1">
+                                   <label> Confirm Password:</label>
+                                   <input [type]="pass2" class="form-control" name="cpass" #cpass="ngModel"
+                                   [ngClass]="{'is-invalid':frm.submitted && cpass.invalid}" ngModel required>
+                                   <i class="fa fa-eye" style="margin-left: -20px;margin-top: 5px;" (click)=" passtoggler2()"></i>
+                                   <div *ngIf="frm.submitted&&cpass.valid" class="alert-danger">
+                                       <div *ngIf="pass.value!=cpass.value">Password Does not Match</div>
+                                   </div>
+                               </div>
+                               <div class="form-group custom-group mt-1">
+                                <label> Securtiy Question:</label>
+                                <select name="ques" #ques="ngModel" ngModel>
+                                    <option *ngFor="let sec of  SecQ">{{sec}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group custom-group mt-1">
+                                <label> Answer:</label>
+                                <input type="text" class="form-control" name="ans" #ans="ngModel" 
+                                [ngClass]="{'is-invalid':frm.submitted && ans.invalid}" ngModel required>
+                            </div>
+                            <div class="form-group custom-group mt-3">
+                                <label> Create New Account:</label>
+                                <input class="cust-radio" style="margin-top: 7px;margin-left: -65px;" type="radio" name="acc"
+                                 value="newacc" #acc="ngModel" ngModel>
+                            </div>
+                            <div class="form-group custom-group mt-2">
+                                <label> Add to Existing Account:</label>
+                                <input class="cust-radio" type="radio"  style="margin-left: -65px;margin-top: 4px;" name="acc" #acc="ngModel"
+                                value="exacc" ngModel >
+                            </div> 
+                            <div *ngIf="acc.value=='newacc'">
+                            <div class="form-group custom-group mt-5">
+                            <label>Contact Type:</label>
+                            <select name="contact" #contact="ngModel" ngModel>
+                                <option *ngFor="let cont of  Contact">{{cont}}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group custom-group mt-1">
+                           <label>First Name:</label>
+                           <input type="text" class="form-control" name="fn" #fn="ngModel" ngModel [(ngModel)]="userobj.fname"
+                           [ngClass]="{'is-invalid':frm.submitted && fn.invalid}" required>
+                       </div>
+                       <div class="form-group custom-group mt-1">
+                           <label> Middle Initial:</label>
+                           <input type="text" class="form-control" name="mn" #mn="ngModel" ngModel>
+                       </div>
+                      
+                    <div class="form-group custom-group mt-1">
+                        <label> Last Name:</label>
+                        <input  type="text" class="form-control" name="ln" #ln="ngModel" ngModel [(ngModel)]="userobj.lname"
+                        [ngClass]="{'is-invalid':frm.submitted && ln.invalid}" required>
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label> Street Address:</label>
+                        <input  type="text" class="form-control" name="sa" #sa="ngModel" ngModel
+                        [ngClass]="{'is-invalid':frm.submitted && sa.invalid}" required>
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label> Other Address:</label>
+                        <input  type="text" class="form-control" name="oa" #oa="ngModel" ngModel >
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label> City:</label>
+                        <input  type="text" class="form-control"name="city"  #city="ngModel"
+                        [ngClass]="{'is-invalid':frm.submitted && city.invalid}" ngModel required>
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label>State:</label>
+                        <select name="state" #state="ngModel" ngModel>
+                            <option *ngFor="let st of  State">{{st}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label> Zip Code:</label>
+  
+                        <input  type="text" class="form-control" name="zc" #zc="ngModel" ngModel 
+                        [ngClass]="{'is-invalid':frm.submitted && zc.invalid}" required>
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label> Phone:</label>
+                        <input  type="text" class="form-control" name="ph" #ph="ngModel" ngModel 
+                        [ngClass]="{'is-invalid':frm.submitted && ph.invalid}"
+                          pattern="[0-9]{10,10}"required>
+                          <div *ngIf="frm.submitted" class="invalid-feedback">
+                              <div *ngIf="ph.errors?.pattern">Enter valid number</div>
+                          </div>
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-secondary" style="border-radius: 3px;margin-top: 25px;margin-left: 25px;margin-bottom: 15px;">Continue</button>
+                    <button type="button" class="btn btn-sm btn-secondary" style="border-radius: 3px;margin-top: 25px;margin-left: 5px;margin-bottom: 15px;">Cancel</button>
+                    </div>
+                   <div *ngIf="acc.value!='newacc'">
+                    <div class="form-group custom-group mt-3">
+                        <label>Customer Number:</label>
+                        <input type="text" class="form-control" name="fn" #fn="ngModel" ngModel>
+                       
+                    </div>
+                    <div class="form-group custom-group mt-1">
+                        <label>Billing Zip Code:</label>
+                        <input type="text" class="form-control" name="fn" #fn="ngModel" ngModel>
+                    </div>
+                   
+                    <button type="button" class="btn  btn-secondary" style="border-radius: 3px;margin-top: 5px;margin-left: 145px;margin-bottom: 15px; width:130px;height:30px;color:black;font-size: small;">Verify Account</button>
+                </div>
+              </form>
+              </td>
+                
+                    </tr>
+                </tbody>
+                    
+               </table>
+                 </td>  
+                 <td width="100" *ngIf="acc.value!='newacc'"> <div style="margin-left:-200px;margin-top:230px;width:200px;border:2px solid black;font-size: small;color:red">
+                    <p>Please contact your
+                      Office administrator to get User ID and Zip Code which is inside
+                      the confirmation mail that was sent when your Office administrator first registered.</p></div></td>
+             </tr>
+         </tbody>
+    </table>
+</div>

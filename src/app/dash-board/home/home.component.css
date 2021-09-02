@@ -1,0 +1,101 @@
+.Heading1
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    font-style: italic;
+    font-weight: bold;
+    color: #65657E;
+}
+.back-img
+{
+    background-image: url("../../../assets/images/hr_line.jpg");
+}
+.homeimg
+{
+    margin-left: 16px;
+    margin-right: 6px;
+
+    
+}
+.InnerText
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #727272;
+    text-decoration: none;
+    text-align: justify;
+    
+}
+.text
+{
+    margin-right: 5px;
+}
+.back-img2
+{
+    background-image: url("../../../assets/images/vr_line.jpg");
+}
+.div1
+{
+   
+    width:314px;
+    height:250px;
+}
+.custom-group
+{
+    display: flex;
+    flex-direction: row;
+}
+label{
+    width:30%;
+    margin-left: 20px;
+    color:white;
+}
+input{
+    width:50%;
+    height:20px;
+    font-size: 13px;
+}
+select
+{   width:50%;
+    height:20px;
+    font-size: 13px;
+}
+.custbutton
+{
+    margin-left: 100px;
+    width:30%;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.formcontainer
+{  
+    background-color: #65657f;
+    height:250px;
+    
+}
+.cust-but
+{   border:1px solid black;
+    border-radius: 3px;
+    
+    
+}
+.cust-but:hover{
+    box-shadow: 1px 0px 2px 2px orange;
+    background-color: white;
+}
+.cust-but:focus{
+    box-shadow: 0px 0px 0px 2px orange;
+    background-color: white;
+}
+.formcontainer2
+{
+   /* display: none;*/
+    background-color: #65657f;
+    height:260px;
+}
+.signup
+{
+    margin-left: 20px;
+    width:70%;
+    color: white;
+}

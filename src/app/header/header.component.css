@@ -1,0 +1,36 @@
+.toplinks
+{
+    color: white;
+    font-size: 12px;
+}
+.list
+{
+  display: flex;  
+  justify-content: space-between;
+  height: 18px;
+  width: 415px;
+  list-style: none;
+ 
+}
+.list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+}
+.text-blink
+{
+ animation-name: text-blink;
+ animation-duration: 1s;
+ animation-delay: 0s;
+ animation-iteration-count: infinite;
+}
+@keyframes text-blink
+{
+    0% {color:black; }
+    50% {color:red ;}
+    100% {color:black; }
+   
+}
+
+

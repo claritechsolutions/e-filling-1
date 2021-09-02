@@ -1,0 +1,30 @@
+.custom-group
+{
+    display: flex;
+    flex-direction: row;
+}
+label
+{
+    width:65%;
+    font-size: 15px;
+    font-weight: 600;
+
+}
+input
+{
+    width: 90%;
+    height:30px;
+    font-size: small;
+    border:1px solid black;
+    border-radius: 0px;
+}
+select{
+    width: 93%;
+    height:30px;
+    font-size: small;
+}
+.cust-radio
+{   margin-left: 0px;
+    width:12%;
+    height:13px;
+}   

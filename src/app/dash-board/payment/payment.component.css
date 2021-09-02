@@ -1,0 +1,36 @@
+.cust-group
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: -15px;
+}
+input 
+{
+    height:25px;
+    width:25%;
+    font-size: small;
+    border: 1px solid gray;
+    border-radius: 0px;
+}
+label
+{
+    width:15%;
+    font-size: 15px;
+    font-weight:500;
+}
+.bill-text
+{
+    display: flex;
+    flex-direction: column;
+}
+select{
+  height:20px;
+  font-size: small;
+}
+.btn
+{
+    background-color: #464657;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    margin-top: -1%;
+}

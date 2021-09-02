@@ -1,0 +1,132 @@
+
+<div class='container'>
+    <table width="898" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#E9E9EC">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="780" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5">
+                              <tr>
+                                  <td>
+                             <form #frm="ngForm">
+                                 <div class="form-group cust-group mt-3">
+                                     <label>First Name</label>
+                                     <input type="text" class="form-control" name="fname" #fname="ngModel" [(ngModel)]="userobj.fn" ngModel>&nbsp;
+                                     <span style="color:red;font-weight: bold;">*</span>
+                                     <label style="margin-left:70px;">Last Name</label>
+                                     <input type="text" class="form-control" name="lnmae" #lname="ngModel" [(ngModel)]="userobj.ln" ngModel>&nbsp;
+                                     <span style="color:red;font-weight: bold;">*</span>
+                                 </div>
+                                 <div class="bill-text">
+                                 <div class="form-group cust-group">
+                                     <label>Billing Address</label>
+                                     <input type="text" class="ml-3" style="width: 660px;" class="form-control" name="ba" #ba="ngModel" 
+                                     [(ngModel)]="userobj.ba" ngModel>&nbsp;
+                                     <span style="color:red;font-weight: bold;">*</span>
+                                 </div>
+                                 <input type="text" style="width: 660px;margin-left: 115px;margin-top: -15px;" class="form-control">
+                                </div>
+                                 <div class="form-group cust-group mt-2">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" name="ct" ngModel #ct="ngModel" [(ngModel)]="userobj.city">&nbsp;
+                                    <span style="color:red;font-weight: bold;">*</span>
+                                    <label style="margin-left:70px;">State</label>
+                                    <select>
+                                        <option *ngFor="let st of state">{{st}}</option>
+                                    </select>&nbsp;
+                                    <span style="color:red;font-weight: bold;">*</span>
+                                 </div>
+                                 <div class="form-group cust-group">
+                                    <label>Zip</label>
+                                    <input type="text" class="form-control" name="zip" #zip="ngModel" ngModel [(ngModel)]="userobj.zip">&nbsp;
+                                    <span style="color:red;font-weight: bold;">*</span>
+                                    <label style="margin-left:70px;">Email</label>
+                                    <input type="email" class="form-control" name="email" ngModel #email="ngModel" [(ngModel)]="userobj.em">&nbsp;
+                                    <span style="color:red;font-weight: bold;">*</span>
+                                    </div>
+                                    <div class="form-group cust-group">
+                                        <label>Day Time Phone#</label>
+                                        <input type="text" class="form-control" maxlength="10" name="phone" #phone="ngModel" ngModel [(ngModel)]="userobj.ph">&nbsp;
+                                        <span style="color:red;font-weight: bold;">*</span>
+                                        
+                                        </div>
+    
+
+                             </form>
+                                </td>
+                              </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="780" align="center" border="0" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5">
+                        <tbody>
+                            <tr>
+                                <td height="70"><h5 class="ml-3">Credit Card Information</h5></td>
+                              
+                            </tr>
+                            <tr>
+                                <td>
+                                    <form #frm2="ngForm">
+                                        <div class="form-group">
+                                            <label>Card Type</label>
+                                            <select style="margin-left: 20%;">
+                                                <option *ngFor="let ct of cardtype">{{ct}}</option>
+                                            </select>&nbsp;
+                                            <span style="color:red;font-weight: bold;">*</span>
+                                            <img class="ml-3 mb-2" src="../../../assets/images/American_Express_1.jpg">
+                                            <img class="ml-3 mb-2" src="../../../assets/images/MasterCard_1.jpg">
+                                            <img  class="ml-3 mb-2"src="../../../assets/images/Visa_1.jpg">
+                                        </div>
+                                        <div class="form-group cust-group">
+                                            <label>Expiry Date</label>
+                                            <select style="margin-left: 20%;">
+                                                <option *ngFor="let mn of month">{{mn}}</option>
+                                            </select>
+                                            <select class="ml-1">
+                                                <option *ngFor="let yr of year">{{yr}}</option>
+                                            </select>&nbsp;
+                                            <span style="color:red;font-weight: bold;">*</span>
+                                           
+                                        </div>
+                                        <div class="form-group cust-group">
+                                            <label>New Card</label>
+                                            <input style="width:9%;margin-left: 20%;" type="text" maxlength="4" class="form-control">
+                                            <input type="text" style="width:9%;margin-left: 1%;"  maxlength="4" class="form-control">
+                                            <input type="text"  style="width:9%;margin-left: 1%;"  maxlength="4" class="form-control">
+                                            <input type="text"  style="width:9%;margin-left: 1%;" maxlength="4" class="form-control">&nbsp;
+                                            <span style="color:red;font-weight: bold;">*</span>
+                                        </div>
+                                        <div class="form-group ">
+                                            
+                                            <p style="margin-left: 40%;font-size: 12px;margin-top: -20px;color: rgb(90, 90, 94);">Please enter the 3-or-4 digit code that appears
+                                             on the front or back of your credit card.</p>
+                                             <div class="cust-group">
+                                             <input style="width:9%;margin-left: 40%;" type="text" maxlength="4" class="form-control">
+                                            &nbsp; <span style="color:red;font-weight: bold;">*</span>
+                                        </div>
+                                    </div>                       
+                                    </form>
+                                </td>
+                            </tr>
+                            <tr>
+                              <td width="40"><a  href="https://verify.authorize.net/anetseal/?pid=a9a173ee-8ac0-40cf-bcd9-b6b6542ddca6&rurl=https://www.e-filing.com">
+                                <img  style="margin-top:-60px" src="../../../assets/images/Seal_Bottom.gif"></a></td>
+                                
+                            </tr>
+                            <tr><td><p style="margin-left: 35%;font-size: 10px;margin-top: -2%;color:#65657F">Please Note: E-filing.com takes the security and confidentiality of your credit card and customer information very seriously. We employ stringent security 
+                                and encryption technologies to guard against the release and misuse of your information.</p></td></tr>
+                            <tr>
+                                <td>
+                                      <button style="margin-left: 40%;" type="submit" class=" btn btn-sm btn-secondary">Continue</button>
+                                      <button style="margin-left: 2%;" type="button" class=" btn btn-sm btn-secondary">Cancel</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
